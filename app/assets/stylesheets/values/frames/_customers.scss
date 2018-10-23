@@ -1,0 +1,22 @@
+.customers-frame {
+    .content {
+        background-image: asset_url('backgrounds/customers.jpg');
+    }
+
+    p {
+        margin-top: 25px;
+        max-width: 450px;
+    }
+
+    @media #{$small-and-down} {
+        text-align: center;
+
+        .fr {
+            @include flex-flow(column nowrap !important);
+        }
+
+        p {
+            max-width: none;
+        }
+    }
+}

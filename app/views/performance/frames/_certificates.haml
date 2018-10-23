@@ -1,0 +1,33 @@
+.frame.certificates-frame.text-white{ data: { anchor: 'certificates', frame: 'certificates', nav: { class: "white" } } }
+    .content.bg-dark-blue
+        .fg
+            .fr.hc
+                %h2.text-extra-bold STANDARDS & CERTIFICATES
+            .fr.hc
+                %h4.text-semi-bold PPAP
+                %h4 -
+                %h4.text-semi-bold UL Recognized Molder (B-1627)
+                %h4 -
+                %h4.text-semi-bold IATF 16949
+                %h4 -
+                %h4.text-semi-bold ISO 14001
+                %h4 -
+                %h4.text-semi-bold SPC-Statistical Process Control
+            .fr.hc.logos.text-center
+                .f1= image_tag 'logos/iso14001/white.svg'
+                .f1= image_tag 'logos/ts16949/white.svg'
+                .f1= image_tag 'logos/ppap/white.svg'
+                .f1= image_tag 'logos/ul/white.svg'
+
+    .content.bg-blue.text-center
+        .fg.vc
+            .fr.vb
+                .box.f1
+                    %h3.text-extra-bold IATF 16949<br>GOODLAND CERTIFICATION
+                    = link_to 'Download as PDF', 'pdfs/ts16949 Goodland.pdf', target: '_blank', class: 'btn btn-border-in btn-white'
+                .box.f1
+                    %h3.text-extra-bold IATF 16949<br>MONTICELLO CERTIFICATION
+                    = link_to 'Download as PDF', 'pdfs/ts16949 Monticello.pdf', target: '_blank', class: 'btn btn-border-in btn-white'
+                .box.f1
+                    %h3.text-extra-bold ISO 14001<br>CERTIFICATION
+                    = link_to 'Download as PDF', 'pdfs/ts14001.pdf', target: '_blank', class: 'btn btn-border-in btn-white'

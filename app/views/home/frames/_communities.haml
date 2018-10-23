@@ -1,0 +1,73 @@
+- goodland = Facility.find_by("LOWER(city) = 'goodland'")
+- monticello = Facility.find_by("LOWER(city) = 'monticello'")
+- elkhart = Facility.find_by("LOWER(city) = 'elkhart'")
+
+.frame.fluid-frame.communities-frame{ data: { anchor: '03', frame: 'communities' } }
+    .content
+        .fg
+            .fr.f1
+                .fc.f1
+                    .map.f1.text-center
+                        = inline_svg 'elements/midwest.svg'
+                        - Facility.order(created_at: :asc).each do |facility|
+                            - key = facility.city&.downcase
+                            .overlay{ class: key }
+                                = image_tag "logos/#{key}/hover.svg"
+                                %i.text-block= facility.address_line_1
+                                %i.text-block= facility.address_line_2
+                                %i.text-block #{facility.city}, #{facility.state} #{facility.zip}
+                                %br
+                                %i.text-block= facility.phone.present? ? "Phone: #{facility.phone}" : nil
+                                %i.text-block
+                                    - if key == 'elkhart'
+                                        Email: #{facility.email}
+                                    - else
+                                        = facility.fax.present? ? "Fax: #{facility.fax}" : nil
+
+                .fc.f1.vw.legend
+                    .title
+                        %h2.text-dark-blue
+                            .text-extra-bold OUR COMMUNITIES
+                            .text-semi-bold IN THE HEART OF SOMETHING BIGGER
+
+                    .tiles
+                        - Facility.order(created_at: :asc).each do |facility|
+                            - key = facility.city&.downcase
+                            .tile{ data: { activates: ".#{key}" } }
+                                .img= image_tag "elements/#{key}/facility.png"
+                                .details.text-light
+                                    .fc
+                                        %h5.text-semi-bold.text-dark-blue= facility.name
+                                        %span #{facility.city}, #{facility.state}
+                                        .fr.hw
+                                            .detail.fc.f1
+                                                %div
+                                                    %h6.text-bold= number_with_delimiter(facility.square_footage)
+                                                    %i Square Footage
+                                            .detail.fc.f1.hc
+                                                %div
+                                                    - if key == 'elkhart'
+                                                        %h6.text-bold= facility.toolmakers
+                                                        %i # of Toolmakers
+                                                    - else
+                                                        %h6.text-bold= facility.facility_presses.sum(:quantity)
+                                                        %i # of Presses
+                                            .detail.fc.f1.hc
+                                                %div
+                                                    %h6.text-bold= facility.operating_since
+                                                    %i Operating Since
+
+
+    = link_to '#04', class: 'fluid-link text-blue-gray' do
+        %i.icon.icon-chevron-thin-down
+
+- content_for(:scripts) do
+    :javascript
+        $( ".tile" ).hover(function() {
+            var selector = $( this ).data( "activates" );
+            $( selector ).addClass( "active" );
+        }, function() {
+            var selector = $( this ).data( "activates" );
+            $( selector ).removeClass( "active" );
+        });
+

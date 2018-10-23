@@ -1,0 +1,29 @@
+- content_for(:title) do
+    = render 'shared/edge/title'
+
+- content_for(:content) do
+    .content
+        .fg.vc.hc
+            .card
+                %h2.text-bold.text-dark-blue Change your password
+                %br
+                = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+                    = devise_error_messages!
+                    = f.hidden_field :reset_password_token
+
+                    .fc
+                        .text-field.text-left
+                            = f.label :password, 'New password', class: 'text-semi-bold'
+                            = f.password_field :password, autofocus: true, autocomplete: 'off'
+                            - if @minimum_password_length
+                                %small (#{@minimum_password_length} characters minimum)
+                                %br
+
+                    .fc
+                        .text-field.text-left
+                            = f.label :password_confirmation, 'Confirm new password', class: 'text-semi-bold'
+                            = f.password_field :password_confirmation, autocomplete: 'off'
+                    .fc.actions
+                        = button_tag 'Update Password', type: 'submit', class: 'btn btn-blue btn-border-in'
+
+= render 'devise/shared/links'

@@ -1,0 +1,142 @@
+.body-improvements,
+.body-portal {
+
+    .content {
+        background-color: $theme-light-gray;
+        padding: 30px;
+        min-height: 100%;
+    }
+
+    .banner {
+        background-image: asset_url('backgrounds/edge/portal.jpg');
+        height: 240px;
+        text-align: center;
+
+        h5 {
+            opacity: .8;
+            margin-top: 40px;
+            margin-bottom: -40px;
+
+            .icon {
+                margin-right: 10px;
+
+                &.icon-feed {
+                    font-size: 85%;
+                }
+            }
+        }
+    }
+
+    .post {
+        border-radius: 0;
+        padding: 35px 70px;
+
+        h2 {
+            font-size: 36px;
+            line-height: 36px;
+        }
+
+        h6 {
+            font-size: 13px;
+            line-height: 13px;
+            padding: 10px 0 30px;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 24px;
+            margin: 0;
+
+            &:not(:last-of-type) {
+                margin-bottom: 25px;
+            }
+        }
+
+        &:not(:last-of-type) {
+            margin-bottom: 20px;
+        }
+    }
+
+    .human-resource {
+        @include flex(0 0 110px);
+        @include transition(box-shadow .3s, border-color .3s, transform .3s);
+        border-radius: 0;
+        border-left: 3px solid transparent;
+        height: 110px;
+        padding: 0 50px;
+
+        svg {
+            margin-right: 50px;
+        }
+
+        h2 {
+            font-size: 30px;
+            line-height: 30px;
+        }
+
+        h6 {
+            white-space: nowrap;
+        }
+
+        img {
+            margin-left: 30px;
+            max-width: 100px;
+        }
+
+        &:not(:last-of-type) {
+            margin-bottom: 10px;
+        }
+
+        &:hover {
+            @include transform(scale(1.02));
+            border-left-color: $theme-blue;
+            box-shadow: -5px 5px 20px rgba(125, 125, 125, .1), -1px 1px 3px rgba(50, 50, 50, .1), 0 -1px 0 rgba(200, 200, 200, .05);
+        }
+    }
+
+    @media #{$small-and-down} {
+        .content {
+            padding: 20px;
+            min-height: auto;
+        }
+
+        .post {
+            padding: 25px;
+
+            h2 {
+                font-size: 28px;
+                line-height: 1;
+            }
+        }
+
+        .human-resource {
+            padding: 20px;
+
+            @include flex-wrap(wrap !important);
+
+            svg {
+                margin-right: 20px;
+            }
+
+            h2 {
+                font-size: 20px;
+                line-height: 20px;
+            }
+
+            .fc:nth-of-type(2) {
+                display: none;
+            }
+
+            .fc:last-of-type {
+                @include align-items(flex-end);
+                margin-left: auto;
+            }
+
+            img {
+                margin: 0;
+                max-width: 75px;
+            }
+
+        }
+    }
+}

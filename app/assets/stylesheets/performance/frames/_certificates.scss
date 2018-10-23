@@ -1,0 +1,36 @@
+.frame.certificates-frame {
+
+    h4 {
+        padding: 0 10px;
+    }
+
+    .box {
+        padding: 50px 0;
+    }
+
+    .btn {
+        margin: 25px auto 0;
+        width: 240px;
+    }
+
+    img {
+        max-width: 175px;
+    }
+
+    .fr {
+        padding: 15px 0;
+    }
+
+    @media #{$small-and-down} {
+        text-align: center;
+
+        .fr:not(.logos) {
+            @include flex-flow(column nowrap !important);
+            @include align-items(center !important);
+        }
+
+        img {
+            max-width: 50px;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+- preload_sources = [asset_path('backgrounds/team.jpg'), asset_path('backgrounds/future.jpg'), asset_path('elements/goodland/facility.png'), asset_path('elements/monticello/facility.png'), asset_path('elements/elkhart/facility.png'), asset_path('elements/vehicle.png'), asset_path('elements/pump.png'), asset_path('elements/refrigerator.png'), asset_path('elements/bin.png'), asset_path('elements/30.png'), asset_path('elements/timeline.png')] + Slide::Team.all.map{ |s| s.image.url(:original) if s.image.exists? }.compact
+
+- if browser.device.mobile?
+    #full-scroll{ data: { preload: preload_sources } }
+        = render 'home/frames/splash'
+        = render 'home/frames/employees'
+        = render 'home/frames/communities'
+        = render 'home/frames/customers'
+        = render 'home/frames/parts'
+        = render 'home/frames/performance'
+        = render 'home/frames/future'
+        .frame.footer-frame.bg-blue{ data: { anchor: 'footer', frame: 'footer', nav: { class: "white" } } }
+            = render 'shared/footer'
+- else
+    #fluid-scroll{ data: { preload: preload_sources } }
+        .fluid-menu
+            %li= link_to '01', '#01'
+            %li= link_to '02', '#02'
+            %li= link_to '03', '#03'
+            %li= link_to '04', '#04'
+            %li= link_to '05', '#05'
+            %li= link_to '06', '#06'
+            %li= link_to '07', '#07'
+        .fluid-surface
+            = render 'home/frames/splash'
+            = render 'home/frames/employees'
+            = render 'home/frames/communities'
+            = render 'home/frames/customers'
+            = render 'home/frames/parts'
+            = render 'home/frames/performance'
+            = render 'home/frames/future'
+        .fluid-footer.bg-blue.shadow-sharp
+            = render 'shared/footer'
+
+

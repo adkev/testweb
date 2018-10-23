@@ -1,0 +1,29 @@
+.frame.parts-frame {
+    .content {
+        padding: 0 100px 50px !important;
+    }
+
+    .arrow {
+        height: 200px;
+        margin: 50px 0;
+    }
+
+    img {
+        width: 70%;
+    }
+
+    @media #{$small-and-down} {
+        .content {
+            padding: 0 20px !important;
+        }
+
+        .arrow {
+            height: 100px;
+            margin: 25px 0;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}

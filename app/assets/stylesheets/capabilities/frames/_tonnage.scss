@@ -1,0 +1,36 @@
+.tonnage-frame {
+    .banner {
+        background-image: asset_url('backgrounds/capabilities_banner.jpg');
+        background-size: cover;
+        height: 200px;
+    }
+
+    .content {
+        padding: 100px 10%;
+    }
+
+    .fc {
+        padding: 25px 0;
+
+        @media #{$small-and-down} {
+            padding: 0;
+        }
+    }
+
+    p {
+        max-width: 425px;
+        margin-top: 15px;
+    }
+
+    ul {
+        min-height: 110px;
+        padding-left: 15px;
+        text-align: left;
+        display: inline-block;
+
+        li {
+            list-style: disc;
+        }
+
+    }
+}

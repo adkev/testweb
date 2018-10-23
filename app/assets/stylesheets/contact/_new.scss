@@ -1,0 +1,85 @@
+.body-contact {
+    .content {
+        padding: 0;
+    }
+
+    .content > .fg > .fr > .fc {
+        padding: 50px 75px;
+    }
+
+    .content > .fg > .fr > .fc:first-of-type {
+        background-image: asset_url('backgrounds/contact.jpg');
+        background-size: auto 100%;
+        background-position: right top;
+        background-repeat: no-repeat;
+    }
+
+    hr {
+        margin: 25px 0;
+    }
+
+    .address {
+        line-height: 20px;
+        padding: 0 15px;
+
+        h5 {
+            padding-bottom: 5px;
+        }
+    }
+
+    .nav-logo {
+        path,
+        polygon {
+            fill: $theme-white;
+        }
+    }
+
+    @media #{$small-and-down} {
+        .content {
+            padding-top: 100px !important;
+        }
+
+        .content > .fg > .fr > .fc {
+            padding: 0;
+        }
+
+        .content > .fg > .fr > .fc:first-of-type {
+            display: none;
+        }
+
+        .address {
+            padding: 0;
+
+            &:first-of-type {
+                padding-right: 5px;
+            }
+
+            &:last-of-type {
+                padding-left: 5px;
+            }
+        }
+
+        form {
+            .fr {
+                @include flex-flow(column nowrap !important);
+            }
+
+            .text-field {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .actions {
+                text-align: center;
+
+                .fc {
+                    @include align-items(center);
+                }
+
+                .btn {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}

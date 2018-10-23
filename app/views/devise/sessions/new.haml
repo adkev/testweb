@@ -1,0 +1,32 @@
+- content_for(:title) do
+    = render 'shared/edge/title'
+
+- content_for(:content) do
+    .content
+        .fg
+            .fr.f1.vc.hc
+                .card
+                    %h2.text-bold.text-dark-blue Sign In
+                    %p.text-light
+                        If you do not have access, send an email to
+                        %br
+                        = link_to 'webmaster@adkev.com', 'mailto:webmaster@adkev.com', class: 'text-regular text-blue'
+                    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+
+                        .fc
+                            .text-field.text-left
+                                = f.label :email, 'Email address', class: 'text-semi-bold'
+                                = f.email_field :email, autofocus: true
+                        .fc
+                            .text-field.text-left
+                                = f.label :password, class: 'text-semi-bold'
+                                = f.password_field :password, autocomplete: 'off'
+                        .fc
+                            - if devise_mapping.rememberable?
+                                .check-box-field
+                                    = f.check_box :remember_me
+                                    = f.label :remember_me
+                        .fc.actions
+                            = button_tag 'Sign In', type: 'submit', class: 'btn btn-blue btn-border-in'
+
+                    = render 'devise/shared/links'

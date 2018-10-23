@@ -1,0 +1,25 @@
+- content_for(:title) do
+    = render 'shared/edge/title'
+
+- content_for(:content) do
+    .content
+        .fg
+            .fr.f1.vc.hc
+                .card
+                    %h2.text-bold.text-dark-blue Account Activation
+                    %br
+
+                    = form_for resource, as: resource_name, url: update_user_confirmation_path, method: :put, id: 'activation-form' do |f|
+                        = hidden_field_tag :confirmation_token, @confirmation_token
+
+                        - if @requires_password
+                            .fc
+                                .text-field.text-left
+                                    = f.label :password, 'Password', class: 'text-semi-bold'
+                                    = f.password_field :password, placeholder: 'Password'
+                            .fc
+                                .text-field.text-left
+                                    = f.label :password_confirmation, 'Password Confirmation', class: 'text-semi-bold'
+                                    = f.password_field :password_confirmation, placeholder: 'Retype password'
+                        .fc.actions
+                            = button_tag 'Activate', type: 'submit', class: 'btn btn-blue btn-border-in'

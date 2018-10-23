@@ -1,0 +1,164 @@
+// .btn {
+//     @include align-items(center);
+//     @include display(flex);
+//     @include flex-flow(row nowrap);
+//     @include justify-content(center);
+//     border-color: transparent;
+//     font-size: 15px;
+//     font-weight: 700;
+//     height: 50px;
+//     max-width: 200px;
+//     padding: 0 20px;
+
+//     .icon {
+//         margin-left: 3px;
+//         margin-right: -3px;
+
+//         &.icon-chevron-small-right {
+//             font-size: 23px;
+//         }
+//     }
+
+//     &-slanted {
+//         position: relative;
+//         z-index: 1;
+
+//         &::after {
+//             position: absolute;
+//             right: -20px;
+//             top: 0;
+//             content: '';
+//             width: 0;
+//             height: 0;
+//             border-bottom: 50px solid transparent;
+//             border-left: 20px solid transparent;
+//             border-left-color: inherit;
+//         }
+//     }
+
+//     &-white {
+//         background-color: $theme-white;
+//         border-color: $theme-white;
+//         color: $theme-blue-gray;
+//     }
+
+//     &-blue {
+//         background-color: $theme-blue;
+//         border-color: $theme-blue;
+//         color: $theme-white;
+//     }
+
+//     &-light-blue {
+//         background-color: $theme-light-blue;
+//         border-color: $theme-light-blue;
+//         color: $theme-white;
+//     }
+
+//     &-dark-blue {
+//         background-color: $theme-dark-blue;
+//         border-color: $theme-dark-blue;
+//         color: $theme-white;
+//     }
+
+//     &-transparent {
+//         border: 1px solid $theme-white;
+//     }
+// }
+
+
+$btn-animation-duration: .5s;
+$btn-colors: (
+    'blue': $theme-blue,
+    'red': $theme-red,
+    'light-blue': $theme-light-blue,
+    'dark-blue': $theme-dark-blue,
+    'white': $theme-white
+);
+
+.btn {
+    @include align-items(center);
+    @include display(flex);
+    @include flex-flow(row nowrap);
+    @include justify-content(center);
+    @include transition(all $btn-animation-duration, background-color $btn-animation-duration / 2);
+    position: relative;
+    font-size: 15px;
+    font-weight: 700;
+    height: 50px;
+    max-width: 250px;
+    padding: 0 20px;
+    border-radius: 0;
+}
+
+.btn-border-in {
+    border-width: 1px;
+    border-style: solid;
+
+    &:before,
+    &:after {
+        @include transition(all $btn-animation-duration);
+        content: '';
+        border-style: solid;
+        position: absolute;
+        z-index: 5;
+    }
+
+    &:before {
+        right: 100%;
+        border-width: 1px 0 1px 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        transition-delay: 0.05s;
+    }
+
+    &:after {
+        right: 0;
+        bottom: 100%;
+        border-width: 0 1px 0 1px;
+        top: 0;
+        left: 0;
+    }
+
+    &:active,
+    &:hover {
+        background-color: transparent;
+
+        &:before {
+            right: 0;
+        }
+
+        &:after {
+            bottom: 0;
+        }
+    }
+
+    @each $name,$hex in $btn-colors {
+
+        &.btn-#{$name} {
+
+            &:before,
+            &:after {
+                border-color: #{$hex};
+            }
+
+            &:hover {
+                color: #{$hex};
+            }
+        }
+    }
+}
+
+@each $name,$hex in $btn-colors {
+
+    .btn-#{$name} {
+        background-color: #{$hex};
+        border-color: transparent;
+        color: $theme-white;
+
+        @if $name == 'white' {
+            color: $theme-blue;
+        }
+    }
+}
+

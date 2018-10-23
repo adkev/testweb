@@ -1,0 +1,2 @@
+module Edge::TutorialsHelper
+end

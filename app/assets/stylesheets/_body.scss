@@ -1,0 +1,28 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    @include perspective(2000px);
+    background-color: $theme-blue-gray;
+    color: $theme-dark-gray;
+    font-family: proxima-nova, sans-serif;
+
+    main {
+        @include transform-origin(center left);
+        background-color: $theme-white;
+        height: 100%;
+        overflow: hidden;
+        will-change: transform;
+
+        @media #{$medium-and-up} {
+            padding: 15px;
+        }
+    }
+
+    &:not(.body-mobile) {
+        min-width: 992px;
+        overflow: auto !important;
+    }
+}

@@ -1,0 +1,32 @@
+.future-frame {
+    color: $theme-white;
+
+    .content {
+        background-image: asset-url('backgrounds/future.jpg');
+        padding-left: 25px !important;
+        padding-right: 25px !important;
+    }
+
+    h1 {
+        margin-bottom: -20px;
+    }
+
+    h3 {
+        margin-top: 40px;
+    }
+
+    .fg img {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+
+    @media #{$small-and-down} {
+        h1 {
+            margin-bottom: -10px;
+        }
+
+        .content {
+            height: 100vh;
+        }
+    }
+}

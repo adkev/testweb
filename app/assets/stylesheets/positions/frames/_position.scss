@@ -1,0 +1,73 @@
+.position-frame {
+    .content {
+        padding-left: 0;
+        z-index: 100;
+    }
+
+    ul,
+    ol {
+        padding-left: 20px;
+    }
+
+    li {
+        list-style: disc;
+        margin-bottom: 10px;
+    }
+
+    hr {
+        margin: 25px 0;
+    }
+
+    p {
+        margin-top: 0;
+    }
+
+    .positions {
+        padding: 0 30px 0 10px;
+
+        > h4 {
+            padding: 15px;
+        }
+    }
+
+    .position {
+        @include transition(box-shadow .3s, border .3s, color .3s, transform .3s);
+        background-color: $theme-white;
+        border-left: 3px solid transparent;
+        padding: 15px;
+        border-top: 1px solid #e6e6e6;
+
+        &:hover,
+        &.active {
+            color: $theme-blue;
+        }
+
+        &.active {
+            @include transform(scale(1.05));
+            border-top-color: transparent;
+            border-left-color: $theme-blue;
+            box-shadow: -5px 5px 20px rgba(125, 125, 125, .1), -1px 1px 3px rgba(50, 50, 50, .1);
+            z-index: 40;
+
+        }
+    }
+
+
+    @media #{$small-and-down} {
+        .fg > .fr {
+            @include flex-flow(column nowrap !important);
+        }
+
+        .positions {
+            margin-bottom: 50px;
+        }
+
+        .actions {
+            text-align: center;
+
+            .btn {
+                margin: 0 auto;
+            }
+        }
+    }
+}

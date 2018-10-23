@@ -1,0 +1,146 @@
+.body-edge {
+    overflow: auto !important;
+
+    .main {
+        padding: 60px 0 0;
+    }
+
+    .title {
+        @include align-items(center);
+        @include display(flex);
+        background-color: $theme-blue;
+        color: $theme-white;
+        height: 60px;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        .icon {
+            @include transition(opacity .5s);
+            font-size: 18px;
+            opacity: .7;
+            margin-left: 20px;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        img {
+            display: block;
+        }
+
+        .dropdown-button {
+            @include justify-content(flex-start);
+            cursor: pointer;
+            min-width: 150px;
+            max-width: none;
+            height: 60px;
+
+            i {
+                margin-left: 5px;
+                font-size: 12px;
+            }
+
+        }
+        .dropdown-content {
+            line-height: 1;
+
+            li {
+                @include transition(background-color .3s);
+                min-height: auto;
+                line-height: 1;
+
+                &:hover {
+                    background-color: $theme-off-white;
+                }
+
+                &.divider {
+                    background-color: $theme-light-gray;
+                }
+            }
+
+            a {
+                @include transition(color .3s);
+                color: $theme-blue-gray;
+                padding: 10px 15px;
+                font-size: 13px;
+                font-weight: 600;
+                line-height: 1;
+                min-width: 200px;
+
+                &.active {
+                    color: $theme-blue;
+                }
+            }
+        }
+    }
+
+    .sidebar {
+        padding: 50px 0;
+
+        a {
+            @include align-items(center);
+            @include display(flex);
+            @include transition(color .3s, fill .3s);
+            color: $theme-blue-gray;
+            font-size: 20px;
+            padding: 15px 40px;
+            position: relative;
+
+            path {
+                fill: inherit;
+            }
+
+            &:after {
+                background-color: $theme-white;
+                bottom: 6px;
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 6px;
+                width: 3px;
+            }
+
+            &:hover {
+                color: $theme-blue;
+                fill: $theme-blue;
+            }
+
+            &.active {
+                color: $theme-blue;
+                fill: $theme-blue;
+
+
+                &:after {
+                    background-color: $theme-blue;
+                }
+            }
+        }
+
+        .icon {
+            @include flex(0 0 20px);
+            margin-right: 15px;
+            width: 20px;
+        }
+    }
+
+    .nav-open {
+        height: 60px !important;
+        top: 0;
+        right: 10px;
+    }
+
+    @media #{$small-and-down} {
+        .main > .fg > .fr > .fc:first-child {
+            display: none;
+        }
+    }
+}
+
+@import 'edge/portal';
+@import 'edge/tutorial';
+@import 'edge/users';

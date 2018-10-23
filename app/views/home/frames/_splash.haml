@@ -1,0 +1,19 @@
+.frame.fluid-frame.splash-frame{ data: { anchor: '01', frame: 'splash' } }
+    .content
+        .fg.vc
+            .fr.f1.vc
+                .fc.f1
+                    %h2.text-semi-bold.text-pale-blue PART OF SOMETHING
+                    %h1.text-extra-bold.text-dark-blue{ style: 'z-index: 1;' } BIGGER
+                    %h3 Adding value to every part.
+                    = link_to values_path, class: 'btn btn-light-blue btn-border-in' do
+                        %span Mission & Values
+                        %i.icon.icon-chevron-small-right
+                .fc.f1
+                    - if browser.device.mobile?
+                        %div= image_tag 'elements/mobile/athlete.png'
+                    - else
+                        = inline_svg 'elements/athlete.svg'
+
+    = link_to '#02', class: 'fluid-link text-blue-gray' do
+        %i.icon.icon-chevron-thin-down

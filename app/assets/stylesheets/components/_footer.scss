@@ -1,0 +1,130 @@
+.footer {
+    height: 550px;
+
+    .content {
+        background-color: inherit !important;
+        padding: 35px 0 !important;
+    }
+
+    h2 {
+        font-size: 34px;
+        line-height: 34px;
+    }
+
+    p {
+        max-width: 400px;
+        font-size: 14px;
+        line-height: 16px;
+
+    }
+
+    img {
+        max-width: 60%;
+    }
+
+    .dashes {
+        @include transform(rotateZ(15deg));
+        width: 1px;
+        height: 100%;
+        border-left: 2px dashed $theme-white;
+    }
+
+
+    .address {
+        line-height: 20px;
+    }
+
+    .numbers {
+        font-size: 13px;
+        line-height: 16px;
+        padding-bottom: 80px;
+    }
+
+    .links {
+        font-size: 14px;
+    }
+
+    .top {
+        .btn {
+            width: 225px;
+            max-width: 225px;
+        }
+    }
+
+    .bottom {
+        position: relative;
+
+        .btn {
+            position: absolute;
+            bottom: 30px;
+            left: -3px;
+            max-width: 275px;
+            width: 275px;
+        }
+    }
+
+    .terms {
+        bottom: 4px;
+        left: 0;
+        position: absolute;
+        right: 0;
+
+        a {
+            display: inline-block;
+            font-size: 10px;
+            line-height: 10px;
+        }
+
+        .bullet {
+            padding: 0 4px 0 7px;
+        }
+
+        a {
+            > * {
+                opacity: .8;
+            }
+
+            > :last-child {
+                @include transition(color .2s, opacity .2s);
+            }
+
+            &:hover > :last-child {
+                color: $theme-blue;
+                opacity: 1;
+            }
+        }
+    }
+
+    @media #{$medium-and-down} {
+        text-align: center;
+
+        .btn {
+            margin: 0 auto;
+        }
+    }
+
+    @media #{$small-and-down} {
+        height: auto;
+
+        .fr {
+            @include flex-flow(column nowrap !important);
+        }
+
+        .bottom {
+            padding: 50px 0;
+
+            .content {
+                padding: 25px 0 !important;
+            }
+
+            .btn {
+                position: static;
+                margin: 0 auto 25px;
+            }
+        }
+
+        .numbers {
+            padding-bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,107 @@
+form {
+
+    label {
+        display: block;
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+    [type=text],
+    [type=password],
+    [type=email],
+    [type=tel],
+    [type=number],
+    [type=date],
+    textarea {
+        min-height: 50px;
+        padding: 0 15px;
+        width: 100%;
+        border: 1px solid rgb(238, 238, 238);
+        border-radius: 4px;
+        box-shadow: none;
+        outline: none;
+
+        &:focus {
+            border-color: $theme-light-blue;
+        }
+
+        @include placeholder {
+            opacity: .7;
+        }
+
+        &[disabled] {
+            cursor: not-allowed;
+            background-color: $theme-off-white;
+        }
+    }
+
+    [type='checkbox'],
+    [type='radio'] {
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        visibility: hidden;
+        width: 0;
+        z-index: -9999;
+
+        & + label {
+            cursor: pointer;
+        }
+
+        & + label:before {
+            @include transition(background-color .25s, color .25s);
+            @include display(flex);
+            @include align-items(center);
+            @include justify-content(center);
+            background-color: $theme-light-gray;
+            color: $theme-light-gray;
+            content: '\e914';
+            cursor: pointer;
+            font-family: 'icomoon';
+            font-size: 22px;
+            height: 32px;
+            margin-right: 15px;
+            text-align: center;
+            width: 32px;
+        }
+
+        &:checked + label:before {
+            background-color: $theme-blue;
+            color: $theme-white;
+        }
+    }
+
+    [type=submit] {
+        border: 0;
+        max-width: none;
+        width: 250px;
+    }
+
+    textarea {
+        padding: 10px 15px;
+    }
+
+    hr {
+        margin: 20px 0;
+    }
+
+
+    .text-field {
+        padding: 10px 0;
+
+        &:first-of-type:not(:last-of-type) {
+            padding-right: 15px;
+        }
+
+        &:last-of-type:not(:first-of-type) {
+            padding-left: 15px;
+        }
+    }
+
+    .check-box-field,
+    .radio-field {
+        padding: 10px 0;
+    }
+
+}

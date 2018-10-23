@@ -1,0 +1,15 @@
+.employees-frame {
+    .content {
+        background-image: asset_url('backgrounds/employees.jpg');
+        padding: 75px 125px;
+    }
+
+    p {
+        margin-top: 25px;
+        max-width: 450px;
+    }
+
+    @media #{$small-and-down} {
+        text-align: center;
+    }
+}

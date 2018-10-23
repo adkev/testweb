@@ -1,0 +1,15 @@
+.frame.value-added-frame{ data: { anchor: 'value-added', frame: 'value-added' } }
+    .content
+        .fg.vc
+            .fr.vc
+                .fc.hc.f1
+                    - if browser.device.mobile?
+                        = image_tag 'elements/mobile/hvac.svg'
+                    - else
+                        = inline_svg 'elements/hvac.svg'
+                .fc.hr.f1
+                    %div
+                        %h2.text-dark-blue
+                            .text-extra-bold VALUE ADDED
+                            .text-semi-bold ASSEMBLY
+                        %p Adkev adds value through the assembly of molded and purchased components in order to reduce our customers total cost.

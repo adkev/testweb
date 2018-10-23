@@ -1,0 +1,17 @@
+:javascript
+    var flashes = #{raw flash.to_a};
+
+    $( "#toast-container" ).empty();
+
+    $.each( flashes, function( i, flash ) {
+        if ( typeof( flash[1] ) == "object" ) {
+            $.each( flash[1], function( j, msg ) {
+                Materialize.toast( "<span>" + msg + "</span>", 8000, flash[0] );
+            });
+        }
+        else {
+            if ( flash[1].length > 0 ) {
+                Materialize.toast( "<span>" + flash[1] + "</span>", 8000, flash[0] );
+            }
+        }
+    });

@@ -1,0 +1,49 @@
+.insert-frame {
+
+    .content {
+        background-color: $theme-light-gray;
+        padding: 100px 10%;
+    }
+
+    .fc {
+        padding: 0 50px;
+    }
+
+    p {
+        max-width: 425px;
+        margin-top: 15px;
+    }
+
+    img {
+        display: block;
+        margin-bottom: 40px;
+        width: 70%;
+    }
+
+    svg {
+        max-width: 400px;
+        min-width: 200px;
+        min-height: 400px;
+    }
+
+    @media #{$small-and-down} {
+        text-align: center;
+
+        .fr {
+            @include flex-flow(column nowrap !important);
+        }
+
+        .fc {
+            padding: 0;
+            width: 100%;
+        }
+
+        .content {
+            height: 100vh;
+        }
+
+        p {
+            padding: 0 10%;
+        }
+    }
+}

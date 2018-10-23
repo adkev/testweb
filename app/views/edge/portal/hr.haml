@@ -1,0 +1,58 @@
+- content_for(:title) do
+    = render 'shared/edge/title'
+
+- content_for(:sidebar) do
+    = render 'shared/edge/sidebar'
+
+- content_for(:content) do
+    .scrollable
+        .banner
+            .fg.vc
+                .fc.hc
+                    %h2.text-extra-bold.text-white Human Resource Portals
+                    %h2.text-white Everything you need, in one place...
+                    %h5.text-semi-bold.text-white.fr.vt
+                        %i.icon.icon-hr
+                        %span HR Portals
+
+        .content
+            .fg
+                = link_to 'https://login.paylocity.com/Escher/Escher_WebUI/views/login/login.aspx', target: '_blank', class: 'fr card human-resource vc' do
+                    = inline_svg 'icons/payroll.svg', height: 40
+                    .fc.f2
+                        %h5.text-semi-bold View my
+                        %h2.text-bold.text-dark-gray Payroll Information
+                    .fc.f1.hr
+                    .fr.f2.hr.vc
+                        %h6.text-semi-bold POWERED BY
+                        = image_tag 'logos/paylocity/blue_gray.svg', height: 50
+
+                = link_to 'https://www.transamerica.com/individual/', target: '_blank', class: 'fr card human-resource vc' do
+                    = inline_svg 'icons/finance.svg', height: 40
+                    .fc.f2
+                        %h5.text-semi-bold Track my
+                        %h2.text-bold.text-dark-gray Financial Benefits
+                    .fc.f1.hr
+                    .fr.f2.hr.vc
+                        %h6.text-semi-bold POWERED BY
+                        = image_tag 'logos/transamerica/blue_gray.svg', height: 50
+
+
+                = link_to 'https://www.umr.com/tpa-ap-web/', target: '_blank', class: 'fr card human-resource vc' do
+                    = inline_svg 'icons/healthcare.svg', height: 40
+                    .fc.f2
+                        %h5.text-semi-bold Manage my
+                        %h2.text-bold.text-dark-gray Healthcare
+                    .fc.f1.hr
+                    .fr.f2.hr.vc
+                        %h6.text-semi-bold POWERED BY
+                        = image_tag 'logos/umr/blue_gray.svg', height: 50
+
+                = link_to 'http://tinyurl.com/adkevinc', target: '_blank', class: 'fr card human-resource vc' do
+                    = inline_svg 'icons/sms.svg', height: 40
+                    .fc.f2
+                        %h5.text-semi-bold Set my
+                        %h2.text-bold.text-dark-gray Text Alerts
+                    .fr.f2.hr.vc
+                        %h6.text-semi-bold POWERED BY
+                        = image_tag 'logos/adkev/blue_gray.svg', height: 50

@@ -1,0 +1,27 @@
+%nav.nav.scrollable
+    %button.btn.btn-nav.nav-close
+        %i.icon.icon-close
+    %h3.text-bold= link_to 'Home', root_path
+    %ul
+    %h3.text-bold= link_to 'Values', values_path
+    %ul
+        %li= link_to 'Mission', values_path(anchor: 'mission')
+        %li= link_to 'Values', values_path(anchor: 'values')
+        %li= link_to 'Something Bigger', values_path(anchor: 'community')
+
+    %h3.text-bold= link_to 'Capabilities', capabilities_path
+    %ul
+        %li= link_to 'Manufacturing Approach', capabilities_path(anchor: 'story')
+        %li= link_to 'Facilities + Equipment', capabilities_path(anchor: 'process')
+        %li= link_to 'Specialties', capabilities_path(anchor: 'tonnage')
+    %h3.text-bold= link_to 'Performance', performance_index_path
+    %ul
+        %li= link_to 'Metrics', performance_index_path(anchor: 'metrics')
+        %li= link_to 'Awards + Certifications', performance_index_path(anchor: 'awards')
+    %h3.text-bold= link_to 'Open Positions', positions_path
+    %ul
+    %h3.text-bold= link_to 'Contact', new_contact_path
+    %ul
+    %div
+        = link_to edge_path, class: 'btn btn-white btn-edge' do
+            = image_tag 'logos/edge/blue_gray.svg', width: 125

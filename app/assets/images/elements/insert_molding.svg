@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="svg-insert" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 452.8 313.5" enable-background="new 0 0 452.8 313.5" xml:space="preserve">
+<line id="line-top-dashes" x1="270" x2="365" y1="44" y2="10" stroke="#859894" stroke-width="1" stroke-dasharray="6"/>
+<line id="line-top" x1="270" x2="365" y1="44" y2="10" stroke="#f2f2f2" stroke-width="2"/>
+<line id="line-bottom-dashes" x1="230" x2="340" y1="225" y2="190" stroke="#859894" stroke-width="1" stroke-dasharray="6"/>
+<line id="line-bottom" x1="230" x2="340" y1="225" y2="190" stroke="#f2f2f2" stroke-width="2"/>
+<image id="part-base" overflow="visible" width="277" height="249" xlink:href="/insert_molding/base.png"  transform="matrix(1 0 0 1 2.4193 24.149)"></image>
+<rect x="11.1" y="4.4" transform="matrix(5.109151e-02 -0.9987 0.9987 5.109151e-02 -9.0494 279.7737)" fill="none" width="263.3" height="280.4"/>
+<image id="part-top-bolt" overflow="visible" width="82" height="78" xlink:href="/insert_molding/bolt_top.png"  transform="matrix(1 0 0 1 301.7 4.007)"></image>
+<image id="part-bottom-bolt" overflow="visible" width="95" height="90" xlink:href="/insert_molding/bolt_top.png"  transform="matrix(1 0 0 1 347.8 178.4245)"></image>
+<circle id="position-left-top-bolt" fill="none" cx="220.6" cy="35.3" r="6.5"/>
+<circle id="position-right-top-bolt" fill="none" cx="380.6" cy="-20" r="6.5"/>
+<circle id="position-left-bottom-bolt" fill="none" cx="137" cy="212" r="6.5"/>
+<circle id="position-right-bottom-bolt" fill="none" cx="360" cy="150" r="6.5"/>
+</svg>

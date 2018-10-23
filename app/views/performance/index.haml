@@ -1,0 +1,20 @@
+- preload_sources = [asset_path('backgrounds/performance.jpg'), asset_path('backgrounds/performance_map.png'), asset_path('backgrounds/future.jpg'), asset_path('elements/awards.png')]
+
+#full-scroll{ data: { preload: preload_sources } }
+    = render 'performance/frames/splash'
+    = render 'performance/frames/performance'
+    = render 'performance/frames/metrics'
+    = render 'performance/frames/parts'
+    = render 'performance/frames/accuracy'
+    = render 'performance/frames/awards'
+    = render 'performance/frames/certificates'
+    = render 'performance/frames/top100'
+    = render 'performance/frames/future'
+    .frame.footer-frame.bg-blue{ data: { anchor: 'footer', frame: 'footer', nav: { class: "white" } } }= render 'shared/footer'
+
+
+- content_for(:scripts) do
+    :javascript
+
+
+

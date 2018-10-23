@@ -1,0 +1,43 @@
+.story-frame {
+    .content {
+        background-color: $theme-light-gray;
+        padding: 100px 10%;
+    }
+
+    .fc {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    h2 {
+        margin-bottom: 15px;
+    }
+
+    img {
+        max-width: 75%;
+        min-width: 250px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    @media #{$small-and-down} {
+        text-align: center;
+
+        .fr {
+            @include flex-flow(column nowrap !important);
+        }
+
+        .content {
+            padding: 50px 20px !important;
+        }
+
+        h2 {
+            margin: 25px 0 5px;
+        }
+
+        .fc {
+            padding: 0 25px;
+        }
+
+    }
+}

@@ -1,0 +1,87 @@
+- content_for(:title) do
+    = render 'shared/edge/title'
+
+- content_for(:sidebar) do
+    = render 'shared/edge/sidebar'
+
+- content_for(:content) do
+    .scrollable
+        .banner
+            .fg.vc
+                .fc.hc
+                    %h2.text-extra-bold.text-white Let's Improve Together
+                    %h2.text-white Submit your ideas and suggestions...
+                    %h5.text-semi-bold.text-white.fr.vt
+                        %i.icon.icon-improvements
+                        %span Improvements
+
+        .content
+            .card.continuous-improvement
+                = form_for @improvement, url: improvements_path, method: :post do |f|
+                    %h2.text-bold.text-dark-blue{ style: 'font-size: 30px; line-height: 30px;' } Continuous Improvement Form
+                    %p This is the digital version of the “Adkev Continuous Improvement” submission form. When you submit, a member of the team will reach out to you to talk about your idea.
+
+                    %br
+                    %br
+                    %h4.text-semi-bold.text-blue Type of Improvement
+                    %hr
+
+                    .fr
+                        .radio-field.f1
+                            = f.radio_button :improvement_type, 'lean_initiative'
+                            = f.label :improvement_type, value: 'lean_initiative', class: 'fr vt' do
+                                %div
+                                    %h3 Lean Initiative
+                                    %small <i>Ex. Lowering Mfg. cost</i>
+
+                        .radio-field.f1
+                            = f.radio_button :improvement_type, 'near_miss'
+                            = f.label :improvement_type, value: 'near_miss', class: 'fr vt' do
+                                %div
+                                    %h3 Near Miss
+                                    %small <i>Ex. Safety concern</i>
+
+                        .radio-field.f1
+                            = f.radio_button :improvement_type, 'ofi'
+                            = f.label :improvement_type, value: 'ofi', class: 'fr vt' do
+                                %div
+                                    %h3 OFI
+                                    %small <i>Ex. Other form of improv.</i>
+
+
+                    %br
+                    %h4.text-semi-bold.text-blue Employee Section
+                    %hr
+
+                    .fr
+                        .text-field.f1
+                            = f.label :submitted_at, 'Date of Submission', class: 'text-semi-bold'
+                            = f.date_field :submitted_at, placeholder: 'MM/DD/YYYY', disabled: ''
+
+                        .text-field.f1
+                            = f.label :user_id, 'Employee Email', class: 'text-semi-bold'
+                            = f.hidden_field :user_id, value: current_user.id
+                            = text_field_tag :employee_email, current_user.email, disabled: true
+
+                    .fr
+                        .text-field.f1
+                            = f.label :description, 'Description of Continuous Improvement Idea or Safety Concern Finding', class: 'text-semi-bold'
+                            = f.text_area :description, placeholder: 'Description...', rows: 10
+
+                    %br
+                    %h4.text-semi-bold.text-blue Management Section
+                    %hr
+
+                    .fr
+                        .text-field.f1
+                            = f.label :estimated_cost, 'Estimated Cost of Improvement', class: 'text-semi-bold'
+                            = f.text_field :estimated_cost, class: 'currency'
+
+                        .text-field.f1
+                            = f.label :expected_impact, 'Expected Impact of Improvement', class: 'text-semi-bold'
+                            = f.text_field :expected_impact, placeholder: 'Impact'
+
+                    %br
+                    %br
+                    .fr.hr
+                        = button_tag 'Submit Improvement', type: 'submit', class: 'btn btn-blue btn-border-in'

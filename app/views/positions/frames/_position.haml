@@ -1,0 +1,21 @@
+.frame.position-frame{ data: { anchor: 'position', frame: 'position', nav: { class: 'white' } } }
+    .content
+        .fg
+            .fr
+                .fc.f1.positions
+                    %h4.text-bold OPEN POSITIONS (#{Position.count}):
+                    - Position.all.each do |position|
+                        = link_to position_path(position), class: ['position', ('active' if position == @position)] do
+                            %h4.text-bold= position.title
+                            %small.text-block &nbsp;
+                            %h6.text-light Added #{position.created_at.strftime('%B %d, %Y')}
+
+                .fc.f2
+                    %h2.text-bold.text-dark-blue= @position.title.upcase
+                    %hr
+                    .description=  @position.description.html_safe
+                    %hr
+                    .actions
+                        %h5.text-semi-bold Adkev accepts walk in applications. Please visit the locations on our #{link_to 'contact page', new_contact_path, class: 'hvr-blue'}, to obtain and fill out an application or email #{link_to 'humanresources@adkev.com', 'mailto:humanresources@adkev.com', class: 'hvr-blue'} for more information.
+                        %br
+                        = link_to 'APPLY NOW', @position.apply_link, target: '_blank', class: 'btn btn-blue btn-border-in'

@@ -1,0 +1,161 @@
+.fg {
+    @include display(flex);
+    @include flex-flow(column nowrap);
+    height: 100%;
+    width: 100%;
+
+    &.vt {
+        @include justify-content(flex-start);
+    }
+
+    &.vc {
+        @include justify-content(center);
+    }
+
+    &.vb {
+        @include justify-content(flex-end);
+    }
+
+    &.vh {
+        @include justify-content(space-between);
+    }
+
+    &.hl {
+        @include align-items(flex-start);
+    }
+
+    &.hc {
+        @include align-items(center);
+    }
+
+    &.hr {
+        @include align-items(flex-end);
+    }
+
+    &.hw {
+        @include align-items(space-between);
+    }
+
+    &.hwa {
+        @include align-items(space-around);
+    }
+}
+
+.fr {
+    @include display(flex);
+    @include flex-flow(row nowrap);
+
+    &.vt {
+        @include align-items(flex-start);
+    }
+
+    &.vc {
+        @include align-items(center);
+    }
+
+    &.vb {
+        @include align-items(flex-end);
+    }
+
+    &.vw {
+        @include align-items(space-between);
+    }
+
+    &.vwa {
+        @include align-items(space-around);
+    }
+
+    &.hl {
+        @include justify-content(flex-start);
+    }
+
+    &.hc {
+        @include justify-content(center);
+    }
+
+    &.hr {
+        @include justify-content(flex-end);
+    }
+
+    &.hw {
+        @include justify-content(space-between);
+    }
+
+    &.hwa {
+        @include justify-content(space-around);
+    }
+}
+
+.fc {
+    @include display(flex);
+    @include flex-flow(column nowrap);
+
+    &.vt {
+        @include justify-content(flex-start);
+    }
+
+    &.vc {
+        @include justify-content(center);
+    }
+
+    &.vb {
+        @include justify-content(flex-end);
+    }
+
+    &.vw {
+        @include justify-content(space-between);
+    }
+
+    &.vwa {
+        @include justify-content(space-around);
+    }
+
+    &.hl {
+        @include align-items(flex-start);
+    }
+
+    &.hc {
+        @include align-items(center);
+    }
+
+    &.hr {
+        @include align-items(flex-end);
+    }
+
+    &.hw {
+        @include align-items(space-between);
+    }
+
+    &.hwa {
+        @include align-items(space-around);
+    }
+}
+
+.fstretch {
+    height: 100%;
+    width: 100%;
+}
+
+.f1 {
+    @include flex(1 !important);
+}
+
+.f2 {
+    @include flex(2 !important);
+}
+
+.f3 {
+    @include flex(3 !important);
+}
+
+.f4 {
+    @include flex(4 !important);
+}
+
+.f5 {
+    @include flex(5 !important);
+}
+
+.f6 {
+    @include flex(6 !important);
+}

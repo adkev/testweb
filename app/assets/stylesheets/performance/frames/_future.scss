@@ -1,0 +1,28 @@
+.frame.future-frame {
+    .content {
+        background-image: asset-url('backgrounds/future.jpg');
+    }
+
+    h1 {
+        margin-bottom: -20px;
+    }
+
+    h3 {
+        margin-top: 40px;
+    }
+
+    img {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+
+    @media #{$small-and-down} {
+        h1 {
+            margin-bottom: -10px;
+        }
+
+        .content {
+            height: 100vh;
+        }
+    }
+}

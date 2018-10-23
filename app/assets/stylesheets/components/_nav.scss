@@ -1,0 +1,146 @@
+.nav-logo {
+    position: fixed;
+    left: 10px;
+    top: 20px;
+    z-index: 50;
+
+    svg {
+        height: 25px;
+    }
+
+    @media #{$small-and-down} {
+        left: 5px;
+        top: 4px;
+    }
+}
+
+.nav-open {
+    @include transition(color 50ms);
+    color: $theme-dark-blue;
+    min-width: 0;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 101;
+
+    div {
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: 600;
+    }
+
+    svg {
+        display: block;
+        height: 20px;
+        margin-left: 10px;
+        width: 20px;
+    }
+
+    path {
+        @include transition(none);
+        fill: $theme-dark-blue;
+    }
+
+    @media #{$small-and-down} {
+        right: 5px;
+        top: 5px;
+    }
+}
+
+.nav-open,
+.nav-logo {
+    &.white {
+        background: transparent !important;
+        color: $theme-white;
+
+        path,
+        polygon {
+            fill: $theme-white;
+        }
+    }
+}
+
+.nav-close {
+    @include flex(0 0 80px);
+    opacity: .75;
+    font-size: 44px;
+    font-weight: 200;
+    min-width: 0;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.nav {
+    @include align-items(flex-end);
+    @include display(flex);
+    @include flex-flow(column nowrap);
+    @include justify-content(center);
+    color: $theme-white;
+    position: fixed;
+    width: 250px;
+    right: 0;
+    padding: 0 40px 40px 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: -1;
+
+    ul {
+        text-align: right;
+        list-style: none;
+        margin: 0;
+        padding: 5px 0 20px;
+
+        li {
+            font-size: 13px;
+            line-height: 13px;
+        }
+
+        a {
+            display: block;
+            padding: 6px 0;
+            opacity: .65;
+        }
+    }
+
+    .btn-edge {
+        max-width: none;
+        width: 225px;
+        margin-right: -40px;
+    }
+}
+
+.nav-controls {
+    @media #{$small-and-down} {
+        border-bottom: 1px solid rgba(133, 152, 148, 0.25);
+        position: fixed;
+        background-color: $theme-white;
+        top: 0;
+        left: 0;
+        height: 60px;
+        width: 100%;
+        z-index: 101;
+
+        .nav-open {
+            div {
+                padding-top: 4px;
+            }
+        }
+
+        .nav-open,
+        .nav-logo {
+            color: $theme-dark-blue !important;
+
+
+            path,
+            polygon {
+                fill: $theme-dark-blue !important;
+            }
+        }
+    }
+}
+
+#full-scroll + .nav-open {
+    right: 0;
+    top: 0;
+}

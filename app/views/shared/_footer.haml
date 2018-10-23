@@ -1,0 +1,64 @@
+.footer.text-white{ data: { anchor: 'footer', frame: 'footer' } }
+    .fg
+        .fg.f1.vc.top
+            .fr
+                .content.fc.f4.hc.hide-on-med-and-down
+                    .fc
+                        %h2.text-semi-bold FUTURE TEAM MEMBERS:
+                        %p.text-light.text-faint Looking to be a part of the Adkev team? Check out our open operation and corporate positions.
+                        = link_to positions_path, class: 'btn btn-border-in btn-white' do
+                            %span Open Positions
+                            %i.icon.icon-chevron-small-right
+                .fc.f1.hc.vc.hide-on-med-and-down
+                    .dashes
+                .content.fc.f4.hc
+                    .fc
+                        %h2.text-semi-bold NEW CLIENTS:
+                        %p.text-light.text-faint Hire us for your next project. Adkev believes in long-term relationships cut from trust and quality.
+                        = link_to new_contact_path, class: 'btn btn-border-in btn-white' do
+                            %span More Information
+                            %i.icon.icon-chevron-small-right
+
+        .fg.f1.vc.bg-dark-gray.bottom
+            .fr.f1
+                .content.fc.f2.hc
+                    .fc.f1.vw
+                        .address.text-light
+                            %i.text-block P.O. Box 390
+                            %i.text-block 664 South Iroquois Street
+                            %i.text-block Goodland, Indiana 47948
+
+                        .numbers
+                            %div
+                                %span Phone:
+                                %span 219-297-4484
+                            %div
+                                %span Fax:
+                                %span 219-297-3054
+
+                .content.fc.f3.vc.hc
+                    = image_tag "logos/adkev/gray.svg"
+                .content.fc.f2.hc
+                    .links.fc.f1.vw.text-semi-bold
+                        = link_to 'Home', root_path, class: ['text-block', ('text-blue' if controller_name == 'home')]
+                        = link_to 'Values', values_path, class: ['text-block', ('text-blue' if controller_name == 'values')]
+                        = link_to 'Capabilities', capabilities_path, class: ['text-block', ('text-blue' if controller_name == 'capabilities')]
+                        = link_to 'Performance', performance_index_path, class: ['text-block', ('text-blue' if controller_name == 'performance')]
+                        = link_to 'Open Positions', positions_path, class: ['text-block', ('text-blue' if controller_name == 'positions')]
+                        = link_to 'Contact Us', new_contact_path, class: ['text-block', ('text-blue' if controller_name == 'contact')]
+
+                = link_to edge_path, class: 'btn btn-border-in btn-blue' do
+                    = image_tag 'logos/edge/white.svg', width: 125
+
+                .terms.text-center
+                    = link_to 'pdfs/150804 Customer Terms and Conditions (00449192xCDB5A).pdf', target: '_blank' do
+                        .text-inline-block Customer Terms & Conditions
+                    = link_to 'pdfs/170203 Supplier Terms and Conditions (Revised) (00587686xCDB5A).pdf', target: '_blank' do
+                        .bullet.text-inline-block &#8226
+                        .text-inline-block Supplier Terms & Conditions
+                    = link_to 'pdfs/170306 Privacy Policy (00595044xCDB5A).pdf', target: '_blank' do
+                        .bullet.text-inline-block &#8226
+                        .text-inline-block Privacy Policy
+                    = link_to 'pdfs/170306 Website Terms of Use (00595039xCDB5A).pdf', target: '_blank' do
+                        .bullet.text-inline-block &#8226
+                        .text-inline-block Terms of Use

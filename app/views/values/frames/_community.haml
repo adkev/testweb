@@ -1,0 +1,19 @@
+.frame.community-frame{ data: { anchor: 'community', frame: 'community' } }
+    .content
+        .fg
+            .fr.f1.vc
+                .fc.f6
+                    %h2.text-dark-blue
+                        .text-extra-bold SOMETHING BIGGER
+                        .text-semi-bold FOR OUR COMMUNITY
+
+                    %p.text-blue-gray Ingrained in the fabric of our communities, Adkev and our employees are active through volunteer activities and sponsorships of events, charities, and programs that lead to our social well-being. And knowing that tomorrow is more important than yesterday, Adkev is committed to help make our communities sustainable for our future employees. Acting through the development of students in local schools and our commitment to our responsibility to the environment.
+                .fc.f1
+                .fc.f6.vc.fstretch
+                    .slides{ data: { speed: 0.5, duration: 3, transition: 'bleed', stop_on_hover: true } }
+                        - Slide::Community.all.each_with_index do |slide, i|
+                            .slide{ data: { slide: i + 1 }, style: "background-image: url('#{slide.image.url(:original)}');" }
+
+                    .fr.vb.hc.slide-controls
+                        - Slide::Community.all.each_with_index do |slide, i|
+                            = link_to '', '', class: 'slide-control', data: { slide: i + 1 }

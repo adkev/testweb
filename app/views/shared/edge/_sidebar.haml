@@ -1,0 +1,12 @@
+.sidebar
+    = link_to edge_feed_path, class: ('active' if action_name == 'feed') do
+        = inline_svg 'icons/feed.svg', height: 14,  class: 'icon'
+        %h4.text-semi-bold Activity Feed
+
+    = link_to edge_hr_path, class: ('active' if action_name == 'hr') do
+        = inline_svg 'icons/hr.svg', height: 20, class: 'icon'
+        %h4.text-semi-bold HR Portals
+
+    = link_to new_improvement_path, class: ('active' if controller_name == 'improvements') do
+        = inline_svg 'icons/improvements.svg', height: 20, class: 'icon'
+        %h4.text-semi-bold Improvements

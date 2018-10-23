@@ -1,0 +1,22 @@
+- content_for(:title) do
+    = render 'shared/edge/title'
+
+- content_for(:sidebar) do
+    = render 'shared/edge/sidebar'
+
+- content_for(:content) do
+    .scrollable
+        .banner
+            .fg.vc
+                .fc.hc
+                    %h2.text-extra-bold.text-white Welcome Back!
+                    %h2.text-white See what's going on at Adkev...
+                    %h5.text-semi-bold.text-white.fr.vt
+                        %i.icon.icon-feed
+                        %span Activity Feed
+        .content
+            - @posts.each do |post|
+                .card.post
+                    %h2.text-bold.text-dark-blue= post.title
+                    %h6.text-light.text-faint Posted #{post.created_at.strftime('%b. %d, %Y %l:%M %p')}
+                    %div= post.content.html_safe

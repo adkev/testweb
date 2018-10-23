@@ -1,0 +1,15 @@
+%p Hello#{@resource.first_name.present? ? ' ' + @resource.first_name : ''},
+
+%p Adkev Edge has sent you a link to set your password and activate your account:
+
+%p
+    %b #{link_to 'Activation Link', confirmation_url(@resource, confirmation_token: @token)}
+
+%br
+
+%p If you need support, contact us at #{link_to 'it@adkev.com', 'mailto:it@adkev.com'}.
+
+%br
+
+= link_to "http://#{Rails.application.routes.default_url_options[:host]}" do
+    = image_tag 'http://i.imgur.com/9OTW8oN.png', height: 40

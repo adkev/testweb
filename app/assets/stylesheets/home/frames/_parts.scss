@@ -1,0 +1,170 @@
+.parts-frame {
+    .content {
+        background-image: asset_url('backgrounds/parts.jpg');
+    }
+
+    .buckets {
+        padding-bottom: 40px;
+        padding-left: 5%;
+    }
+
+    .bucket {
+        padding-top: 40px;
+        width: 400px;
+
+        .traits {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .trait {
+            position: relative;
+            padding: 0 20px 5px 30px;
+
+            &:before {
+                @include transition(background-color 500ms);
+                content: '';
+                width: 1px;
+                position: absolute;
+                top: 9px;
+                bottom: -9px;
+                left: 4px;
+                background-color: $theme-blue;
+                opacity: .6;
+            }
+
+            &:after {
+                @include transition(background-color 500ms);
+                content: '';
+                width: 9px;
+                height: 9px;
+                position: absolute;
+                left: 0px;
+                top: 5px;
+                background-color: $theme-blue;
+            }
+
+        }
+
+        h4 {
+            @include transition(color 500ms);
+            position: relative;
+            color: $theme-blue;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 16px;
+            margin-top: 5px;
+            opacity: .8;
+            min-height: 48px;
+        }
+
+        .bin {
+            position: relative;
+
+            img {
+                @include filter(grayscale(1));
+                @include transition(filter .2s);
+                height: 150px;
+            }
+
+            &:before {
+                @include align-items(center);
+                @include display(flex);
+                @include transition(color .2s);
+                @include transition(background-color .2s, padding-left .2s, width .2s);
+                background-color: $theme-white;
+                color: $theme-blue-gray;
+                content: attr(data-title);
+                position: absolute;
+                left: 35px;
+                top: calc(50% - 28px);
+                z-index: 10;
+                height: 36px;
+                font-weight: 800;
+                width: 150px;
+                padding-left: 20px;
+                border-radius: 0 2px 2px 0;
+                font-size: 20px;
+            }
+
+            &:after {
+                @include align-items(center);
+                @include display(flex);
+                @include justify-content(center);
+                @include transition(background-color .2s, transform .2s);
+                font-family: 'icomoon';
+                border-radius: 50%;
+                width: 58px;
+                height: 58px;
+                background-color: $theme-blue-gray;
+                color: $theme-white;
+                position: absolute;
+                left: -15px;
+                top: calc(50% - 40px);
+                font-size: 26px;
+                z-index: 10;
+                line-height: 1;
+                speak: none;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+        }
+
+        &.employees .bin:after {
+            content: '\e903';
+        }
+
+        &.community .bin:after {
+            content: '\e901';
+        }
+
+        &.customers .bin:after {
+            content: '\e906';
+        }
+
+        &:hover {
+            h4 {
+                color: $theme-white;
+            }
+
+            .trait:before,
+            .trait:after {
+                background-color: $theme-white;
+            }
+
+            img {
+                @include filter(grayscale(0));
+            }
+
+            .bin {
+                &:before {
+                    color: $theme-blue;
+                    padding-left: 25px;
+                    width: 155px;
+                }
+
+                &:after {
+                    @include transform(scale(1.05));
+                    background-color: $theme-blue;
+                }
+            }
+        }
+    }
+
+    @media #{$small-and-down} {
+        .fr {
+            @include flex-flow(column nowrap !important);
+        }
+
+        .bucket {
+            width: auto;
+        }
+    }
+}

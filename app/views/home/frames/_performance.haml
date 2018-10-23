@@ -1,0 +1,18 @@
+.frame.fluid-frame.performance-frame{ data: { anchor: '06', frame: 'performance', menu: { class: "dark-blue" } } }
+    .content
+        .title
+            .fr.vc
+                .fc= image_tag 'elements/30.png'
+                .fc
+                    %h1.text-extra-bold.text-pale-blue YEARS
+                    %h2.text-bold OF QUALITY PERFORMANCE
+                    = link_to 'View Performance', performance_index_path, class: 'btn btn-blue btn-border-in'
+        .timeline
+            - if browser.device.mobile?
+                = image_tag 'elements/mobile/timeline.png'
+            - else
+                = inline_svg 'elements/timeline.svg'
+
+    = link_to '#07', class: 'fluid-link text-white' do
+        %i.icon.icon-chevron-thin-down
+

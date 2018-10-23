@@ -1,0 +1,26 @@
+.has-error {
+    border-color: $theme-red !important;
+
+    &[type=radio]:not(:checked) + label:before {
+        border: 1px solid $theme-red;
+    }
+}
+
+#error_explanation {
+    padding: 5px 0;
+    color: $theme-red;
+
+    h2 {
+        display: none;
+    }
+
+    ul {
+        margin-top: 0;
+
+        li {
+            font-size: 14px;
+            line-height: 14px;
+            font-weight: 600;
+        }
+    }
+}

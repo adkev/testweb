@@ -1,0 +1,35 @@
+.body-improvements {
+    .card {
+        padding: 40px;
+
+        hr {
+            margin-top: 10px;
+        }
+
+        p {
+            max-width: 635px;
+        }
+    }
+
+
+    @media #{$small-and-down} {
+        .card {
+            padding: 20px;
+        }
+
+        form {
+            .fr:not(label) {
+                @include flex-flow(column nowrap !important);
+            }
+
+            .text-field {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .btn {
+                margin: 0 auto;
+            }
+        }
+    }
+}

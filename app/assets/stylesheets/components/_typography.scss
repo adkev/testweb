@@ -1,0 +1,193 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 152px;
+    line-height: 152px;
+
+    @media #{$medium-and-down} {
+        font-size: 100px;
+        line-height: 100px;
+    }
+
+    @media #{$small-and-down} {
+        font-size: 64px;
+        line-height: 64px;
+    }
+}
+
+h2 {
+    font-size: 44px;
+    line-height: 44px;
+
+    @media #{$medium-and-down} {
+        font-size: 36px;
+        line-height: 36px;
+    }
+
+    @media #{$small-and-down} {
+        font-size: 28px;
+        line-height: .9;
+    }
+}
+
+h3 {
+    font-size: 22px;
+    line-height: 22px;
+
+    @media #{$small-and-down} {
+        font-size: 17px;
+        line-height: 17px;
+    }
+}
+
+h4 {
+    font-size: 20px;
+    line-height: 20px;
+}
+
+h5 {
+    font-size: 18px;
+    line-height: 18px;
+}
+
+h6 {
+    font-size: 14px;
+    line-height: 14px;
+}
+
+p,
+li {
+    font-size: 17px;
+    line-height: 22px;
+}
+
+hr {
+    height: 1px;
+    border: 0;
+    margin: 0;
+    background-color: $theme-light-gray;
+}
+
+.tight {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.text-faint {
+    opacity: .9;
+}
+
+.text-light {
+    font-weight: 200;
+}
+
+.text-regular {
+    font-weight: 400;
+}
+
+.text-semi-bold {
+    font-weight: 600;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.text-extra-bold {
+    font-weight: 800;
+}
+
+.text-black {
+    font-weight: 900;
+}
+
+.text-inline {
+    display: inline;
+}
+
+.text-block {
+    display: block;
+}
+
+.text-inline-block {
+    display: inline-block;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.bg-blue {
+    background-color: $theme-blue !important;
+}
+
+.bg-blue-gray {
+    background-color: $theme-blue-gray !important;
+}
+
+.bg-dark-blue {
+    background-color: $theme-dark-blue !important;
+}
+
+.bg-dark-gray {
+    background-color: $theme-dark-gray !important;
+}
+
+.text-white {
+    color: $theme-white;
+}
+
+.text-dark-gray {
+    color: $theme-dark-gray;
+}
+
+.text-blue {
+    color: $theme-blue;
+}
+
+.text-pale-blue {
+    color: $theme-pale-blue;
+}
+
+.text-light-blue {
+    color: $theme-light-blue;
+}
+
+.text-dark-blue {
+    color: $theme-dark-blue;
+}
+
+.text-blue-gray {
+    color: $theme-blue-gray;
+}
+
+.fill-white {
+    fill: $theme-white;
+}
+
+.fill-blue-gray {
+    fill: $theme-blue-gray;
+}
+
+.hvr-blue {
+    @include transition(color .2s);
+
+    &:hover {
+        color: $theme-blue;
+    }
+}

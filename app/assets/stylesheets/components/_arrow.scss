@@ -1,0 +1,81 @@
+.arrow-join {
+    width: 500px;
+    height: 30px;
+    border-bottom: 1px dashed $theme-blue-gray;
+    position: relative;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 30px;
+        width: 1px;
+    }
+
+    &:before {
+        left: 0;
+        border-left: 1px solid $theme-pale-blue;
+        opacity: .5;
+    }
+
+
+    &:after {
+        right: 0;
+        border-right: 1px solid $theme-pale-blue;
+        opacity: .5;
+    }
+}
+
+.arrow {
+    width: 1px;
+    height: 70px;
+    position: relative;
+
+    &:before {
+        width: 0;
+        position: absolute;
+        top: 0;
+        bottom: 15px;
+        left: 0;
+        border-right: 1px solid $theme-pale-blue;
+        opacity: .5;
+        content: '';
+    }
+
+    &:after {
+        position: absolute;
+        bottom: 0;
+        left: -4px;
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 11px solid $theme-pale-blue;
+        opacity: .75;
+    }
+}
+
+.arrow-line {
+    width: 1px;
+    height: 200px;
+    position: relative;
+    border-right: 1px solid $theme-pale-blue;
+    opacity: .5;
+}
+
+.arrow-connector {
+    height: 2px;
+    width: 50%;
+    border-top: 1px solid $theme-pale-blue;
+    opacity: .5;
+
+    &.right {
+        @include align-self(flex-end);
+    }
+
+    &.left {
+    @include align-self(flex-start);
+    }
+}

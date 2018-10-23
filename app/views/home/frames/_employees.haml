@@ -1,0 +1,16 @@
+.frame.fluid-frame.employees-frame{ data: { anchor: '02', frame: 'employees', menu: { class: 'white' }, nav: { class: 'white' } } }
+    .content
+        .slides{ data: { speed: 0.75, duration: 5, transition: 'bleed' } }
+            - Slide::Team.all.each_with_index do |slide, i|
+                .slide{ data: { slide: i + 1 }, style: ("background-image: url('#{slide.image.url(:original)}');" if slide.image.exists?) }
+
+        .fg.vb.hc.text-center
+            %h2.text-semi-bold OUR PEOPLE
+            %h2.text-extra-bold THE MOST IMPORTANT PART
+            %p.text-light.text-faint.text-center When you break Adkev's story down to its core, it's really a story about people, and our commitment to provide them something better.
+            .fr
+                - Slide::Team.all.each_with_index do |slide, i|
+                    = link_to '', '', class: 'slide-control', data: { slide: i + 1 }
+
+    = link_to '#03', class: 'fluid-link text-white' do
+        %i.icon.icon-chevron-thin-down

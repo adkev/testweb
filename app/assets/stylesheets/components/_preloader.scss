@@ -1,0 +1,60 @@
+.preloader-bg,
+.preloader {
+    background-color: $theme-white;
+    height: 100%;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.preloader {
+    @include align-items(center);
+    @include display(flex);
+    @include justify-content(center);
+    position: fixed;
+
+    .hex-path {
+        @include animation(loading-outer 2s infinite linear);
+        will-change: stroke, stroke-dashoffset;
+    }
+
+    .hex-logo {
+        @include animation(loading-inner 2s infinite linear);
+        will-change: fill;
+    }
+}
+
+@include keyframes(loading-outer) {
+    0% {
+        stroke: #0059a3;
+        stroke-dashoffset: 0;
+        stroke-dasharray: 70px 32px;
+    }
+
+    50% {
+        stroke: $theme-blue;
+    }
+
+    100% {
+        stroke: #0059a3;
+        stroke-dashoffset: 102px;
+        stroke-dasharray: 70px 32px;
+    }
+}
+
+@include keyframes(loading-inner) {
+    0% {
+        fill: #0059a3;
+    }
+
+    50% {
+        fill: $theme-blue;
+    }
+
+    100% {
+        fill: #0059a3;
+    }
+}

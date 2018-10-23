@@ -1,0 +1,7 @@
+- content_for(:title) do
+    = render 'shared/edge/title'
+
+- content_for(:content) do
+    .content
+        .fg.vc.hc
+            = render "edge/tutorial/#{current_user.tutor_step}"

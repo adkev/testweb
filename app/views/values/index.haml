@@ -1,0 +1,11 @@
+- preload_sources = [asset_path('backgrounds/values.jpg'), asset_path('backgrounds/mission.jpg'), asset_path('backgrounds/employees.jpg'), asset_path('backgrounds/customers.jpg'), asset_path('elements/founders.jpg')] + Slide::Community.all.map{ |s| s.image.url(:original) }
+
+#full-scroll{ data: { preload: preload_sources } }
+    = render 'values/frames/splash';
+    = render 'values/frames/story';
+    = render 'values/frames/mission';
+    = render 'values/frames/values';
+    = render 'values/frames/employees';
+    = render 'values/frames/community';
+    = render 'values/frames/customers';
+    .frame.footer-frame.bg-blue{ data: { anchor: 'footer', frame: 'footer', nav: { class: "white" } } }= render 'shared/footer'

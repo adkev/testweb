@@ -1,0 +1,38 @@
+.frame.fluid-frame.customers-frame{ data: { anchor: '04', frame: 'customers' } }
+    .content
+        .fg.vc.text-center
+            .fr.hc.vc.f1
+                %h2.text-dark-blue
+                    .text-extra-bold ADDING VALUE TO EVERY PART
+                    .text-semi-bold SO YOU CAN FOCUS ON SOMETHING BIGGER
+
+            .fr.hw.vb.f3
+                = link_to capabilities_path, class: 'podium f1' do
+                    = image_tag 'elements/vehicle.png'
+                    = image_tag 'elements/vehicle1.png', class: 'popout'
+                    = image_tag 'elements/vehicle2.png', class: 'popout'
+                    = image_tag 'elements/vehicle3.png', class: 'popout'
+                    .ring
+                        .rise
+                    %h4.text-bold YOUR VEHICLE
+
+                = link_to capabilities_path, class: 'podium f1' do
+                    = image_tag 'elements/pump.png'
+                    = image_tag 'elements/business1.png', class: 'popout'
+                    = image_tag 'elements/business2.png', class: 'popout'
+                    = image_tag 'elements/business3.png', class: 'popout'
+                    .ring
+                        .rise
+                    %h4.text-bold YOUR BUSINESS
+
+                = link_to capabilities_path, class: 'podium f1' do
+                    = image_tag 'elements/refrigerator.png'
+                    = image_tag 'elements/home1.png', class: 'popout'
+                    = image_tag 'elements/home2.png', class: 'popout'
+                    = image_tag 'elements/home3.png', class: 'popout'
+                    .ring
+                        .rise
+                    %h4.text-bold YOUR HOME
+
+    = link_to '#05', class: 'fluid-link text-blue-gray' do
+        %i.icon.icon-chevron-thin-down

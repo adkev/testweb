@@ -1,0 +1,66 @@
+.splash-frame {
+    .content {
+        background-image: asset_url('backgrounds/watermark.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 75% center;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        z-index: 1;
+    }
+
+    h1 {
+        margin: 0 0 0 -7px;
+    }
+
+    .btn {
+        margin-top: 30px;
+        z-index: 9999;
+    }
+
+    svg {
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    img {
+
+    }
+
+    @media #{$small-and-down} {
+        text-align: center;
+
+        .fr {
+            @include flex-flow(column nowrap !important);
+        }
+
+        .fc {
+            @include flex(0 0 50vh !important);
+            width: 100%;
+
+            &:first-of-type {
+                @include align-items(center);
+                @include justify-content(flex-end);
+                padding-bottom: 5vh;
+            }
+
+            &:last-of-type {
+                @include justify-content(center);
+            }
+        }
+
+        .btn {
+            width: 60%;
+        }
+
+        img {
+            height: 40vh;
+        }
+    }
+}

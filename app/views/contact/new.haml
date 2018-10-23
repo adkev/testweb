@@ -1,0 +1,74 @@
+- preload_sources = [asset_path('backgrounds/contact.jpg')]
+
+#full-scroll{ data: { preload: preload_sources } }
+    .frame.contact-frame{ data: { anchor: 'contact', frame: 'contact' } }
+        .content
+            .fg
+                .fr
+                    .fc.f1
+                    .fc.f3
+                        %h2.text-blue
+                            .text-extra-bold CONTACT
+                            .text-semi-bold THE ADKEV TEAM
+                        %hr
+                        %br
+
+                        .fr
+                            - Facility.where(show_on_contact_form: true).each do |facility|
+                                - key = facility.city&.downcase
+
+                                .address.f1.text-light
+                                    %h5.text-bold.text-dark-blue= facility.name
+                                    %i.text-block= facility.address_line_1
+                                    %i.text-block= facility.address_line_2
+                                    %i.text-block #{facility.city}, #{facility.state} #{facility.zip}
+                                    - unless facility.address_line_1.present? && facility.address_line_2.present?
+                                        %i.text-block &nbsp;
+                                    .text-semi-bold= facility.phone.present? ? "Phone: #{facility.phone}" : nil
+                                    .text-semi-bold
+                                        - if key == 'elkhart'
+                                            Email: #{facility.email}
+                                        - else
+                                            = facility.fax.present? ? "Fax: #{facility.fax}" : nil
+
+                        %br
+                        %hr
+                        = form_for @contact, url: contact_index_path, method: :post do |f|
+                            .fr
+                                .text-field.f1
+                                    = f.label :title, class: 'text-semi-bold'
+                                    = f.text_field :title, placeholder: 'Title'
+                                .text-field.f1
+                                    = f.label :company, class: 'text-semi-bold'
+                                    = f.text_field :company, placeholder: 'Company'
+
+                            .fr
+                                .text-field.f1
+                                    = f.label :first_name, class: 'text-semi-bold'
+                                    = f.text_field :first_name, placeholder: 'First name'
+                                .text-field.f1
+                                    = f.label :last_name, class: 'text-semi-bold'
+                                    = f.text_field :last_name, placeholder: 'Last name'
+
+                            .fr
+                                .text-field.f1
+                                    = f.label :email, class: 'text-semi-bold'
+                                    = f.text_field :email, placeholder: 'you@email.com'
+                                .text-field.f1
+                                    = f.label :phone, class: 'text-semi-bold'
+                                    = f.phone_field :phone, placeholder: '(xxx) xxx xxxx'
+
+                            .fr
+
+                                .text-field.f1
+                                    = f.label :message, 'How may we help you?', class: 'text-semi-bold'
+                                    = f.text_area :message, rows: 5, placeholder: 'Type your message here...'
+
+                            %hr
+
+                            .fr.actions
+                                .fc.f1
+                                    %h5.text-gray.text-semi-bold A member of the Adkev team will get back to you as soon as possible.
+
+                                .fc.f1.hr
+                                    = button_tag 'Submit Message', type: 'submit', class: 'btn btn-blue btn-border-in'

@@ -1,0 +1,16 @@
+.frame.insert-frame{ data: { anchor: 'insert', frame: 'insert' } }
+    .content
+        .fg.vc
+            .fr.vc
+                .fc.hc.f1
+                    - if browser.device.mobile?
+                        = image_tag 'elements/mobile/insert_molding.svg'
+                    - else
+                        = inline_svg 'elements/insert_molding.svg'
+
+                .fc.hc.f1
+                    %div
+                        %h2.text-dark-blue
+                            .text-extra-bold INSERT
+                            .text-semi-bold MOLDING
+                        %p Adkev offers automated and manual solutions in both vertical and horizontal clamp approaches when creating insert molded parts.

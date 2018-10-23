@@ -1,0 +1,17 @@
+.title
+    .fc.f1.vc
+        - if signed_in? && current_user.tutored?
+            %a.dropdown-button.btn{ href: '#', data: { activates: 'edge-dropdown', beloworigin: 'true', constrainwidth: 'false' } }
+                %span= { 'feed' => 'Activity Feed', 'hr' => 'HR Portals', 'new' => 'Improvements' }[action_name]
+                %i.icon.icon-chevron-thin-down
+            %ul#edge-dropdown.dropdown-content
+                %li= link_to 'Activity Feed', edge_feed_path, class: ('active' if action_name == 'feed')
+                %li= link_to 'HR Portals', edge_hr_path, class: ('active' if action_name == 'hr')
+                %li= link_to 'Improvements', new_improvement_path, class: ('active' if controller_name == 'improvements')
+                %li.divider
+                %li= link_to 'Sign Out', destroy_user_session_path, method: :delete if signed_in?
+    .fc.f1.hc.vc
+        = link_to edge_path do
+            = image_tag 'logos/edge/white.svg', height: 30
+    .f1
+

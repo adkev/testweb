@@ -1,0 +1,49 @@
+.employees-frame {
+    color: $theme-white;
+
+    .content {
+        background-color: transparent;
+        z-index: 1;
+    }
+
+    .slides {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    h2:last-of-type {
+        margin: 6px 0 12px;
+    }
+
+    .btn {
+        margin-top: 30px;
+    }
+
+    .slide-control {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: $theme-white;
+        margin: 0 3px;
+        opacity: .5;
+
+        &.active {
+            opacity: 1;
+        }
+    }
+
+    p {
+        max-width: 600px;
+    }
+
+    @media #{$small-and-down} {
+        .content {
+            height: 100vh;
+        }
+    }
+
+}

@@ -1,0 +1,30 @@
+.frame.awards-frame {
+    .content {
+        padding: 0 100px 100px;
+    }
+
+    .arrow {
+        height: 200px;
+        margin-bottom: 50px;
+    }
+
+    .arrow-line {
+        height: 75px;
+        margin-top: 50px;
+    }
+
+    @media #{$small-and-down} {
+        .content {
+            padding: 0 20px 75px !important;
+        }
+
+        .arrow {
+            height: 100px;
+        }
+
+        .arrow-line {
+            margin-top: 25px;
+        }
+    }
+
+}

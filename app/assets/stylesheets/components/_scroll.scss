@@ -1,0 +1,156 @@
+#fluid-scroll {
+    @include backface-visibility(hidden);
+    background-color: #15181c;
+    color: $theme-blue-gray;
+
+    .fluid-menu {
+        position: fixed;
+        z-index: 5;
+        right: 15px;
+        top: calc(50% - 126.5px);
+        margin: 0;
+        list-style: none;
+
+        li {
+            font-size: 15px;
+            line-height: 15px;
+        }
+
+        a {
+            display: block;
+            position: relative;
+            color: $theme-blue-gray;
+            padding: 10px 0;
+            text-align: right;
+            padding-right: 25px;
+            font-size: 11px;
+            font-family: 'Courier New';
+            opacity: .5;
+
+            &::after {
+                content: '';
+                height: 1px;
+                background-color: $theme-blue-gray;
+                width: 20px;
+                position: absolute;
+                top: calc(50% - 1px);
+                right: 0;
+            }
+        }
+
+        .active a {
+            opacity: 1;
+            font-weight: 900;
+            font-size: 16px;
+        }
+
+        &.white {
+            background: transparent !important;
+
+            a {
+                color: $theme-white;
+
+                &::after {
+                    background-color: $theme-white;
+                }
+            }
+        }
+
+        &.dark-blue {
+            background: transparent !important;
+
+            a {
+                color: $theme-dark-blue;
+
+                &::after {
+                    background-color: $theme-dark-blue;
+                }
+            }
+        }
+    }
+
+    .fluid-frame {
+        background-color: $theme-white;
+        background-position: center center;
+        background-size: cover;
+
+        .content {
+            padding: 0 70px 25px 40px;
+        }
+
+        .fluid-link {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            font-size: 16px;
+            margin-left: -8px;
+        }
+    }
+
+    .fluid-overlay {
+        background-color: $theme-white;
+    }
+}
+
+#full-scroll {
+    padding-top :1px;
+    margin-top: -1px;
+    background-color: $theme-white;
+    color: $theme-blue-gray;
+    height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    // only rendered on mobile
+    .fluid-frame {
+
+        .fluid-link {
+            display: none;
+        }
+
+        .tile,
+        .bucket {
+            // pointer-events: none;
+        }
+    }
+}
+
+.frame {
+    background-color: $theme-white;
+    background-position: center center;
+    background-size: cover;
+
+    .content {
+        background-color: $theme-white;
+        background-position: center center;
+        background-size: cover;
+        padding: 75px;
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+
+        @media #{$small-and-down} {
+            padding: 50px 20px !important;
+        }
+    }
+
+    &.full-frame {
+        height: 100%;
+    }
+}
+
+.scrollable {
+    height: 100%;
+    overflow: auto !important;
+
+    @media #{$small-and-down} {
+        height: 100vh;
+    }
+}
+

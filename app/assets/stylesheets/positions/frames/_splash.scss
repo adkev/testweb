@@ -1,0 +1,11 @@
+.splash-frame {
+    .content {
+        background-image: asset_url('backgrounds/positions.jpg');
+        height: 500px;
+    }
+
+
+    @media #{$small-and-down} {
+        text-align: center;
+    }
+}

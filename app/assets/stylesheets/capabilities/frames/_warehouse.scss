@@ -1,0 +1,18 @@
+.warehouse-frame {
+    .content {
+        background-image: asset_url('backgrounds/warehouse.jpg');
+        padding: 0;
+    }
+
+    .fc {
+        background-color: rgba(8, 77, 147, .7);
+        height: 45%;
+    }
+
+    @media #{$small-and-down} {
+        .content {
+            padding: 0 !important;
+        }
+
+    }
+}

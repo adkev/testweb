@@ -1,0 +1,29 @@
+@media only screen and (min-width: 992px) {
+    #toast-container {
+        left: 20px;
+        right: auto;
+        top: 10px;
+    }
+}
+
+.toast {
+    float: left;
+
+    &.alert {
+        background-color: $theme-red;
+    }
+
+    &.notice {
+        background-color: $theme-blue;
+    }
+}
+
+.body-edge #toast-container {
+    left: auto;
+    right: 10px;
+    top: 60px;
+
+    .toast {
+        float: right;
+    }
+}

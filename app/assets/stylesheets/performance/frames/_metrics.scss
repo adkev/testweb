@@ -1,0 +1,42 @@
+.frame.metrics-frame {
+    .content {
+        padding: 0 100px !important;
+        // padding: 75px 100px 25px;
+    }
+
+    #svg-metrics {
+        position: relative;
+        width: 100%;
+        min-height: 1000px;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    .arrow {
+        height: 200px;
+        margin: 50px 0;
+    }
+
+    img {
+        width: 70%;
+    }
+
+
+    @media #{$small-and-down} {
+        .content {
+            padding: 0 20px !important;
+        }
+
+        .arrow {
+            height: 100px;
+            margin: 25px 0;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+}

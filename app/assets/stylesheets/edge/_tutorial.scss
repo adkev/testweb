@@ -1,0 +1,56 @@
+.body-tutorial {
+    .content {
+        @include flex(1);
+        background-image: asset_url('backgrounds/edge/tutorial.jpg');
+        background-size: cover;
+    }
+
+    .card {
+        width: 50%;
+        text-align: center;
+        padding: 40px 50px;
+        max-width: 500px;
+        min-width: 400px;
+
+        svg {
+            height: 150px;
+            width: 150px;
+            margin: 0 0 30px 0;
+        }
+
+        p {
+            margin: 5px 0 25px;
+            line-height: 16px;
+            font-size: 12px;
+            max-width: 300px;
+            min-height: 48px;
+        }
+
+        .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            border: 1px solid $theme-blue-gray;
+            margin: 0 4px;
+
+            &.filled {
+                background-color: $theme-blue-gray;
+            }
+        }
+
+        .btn {
+            margin-top: 20px;
+            width: 175px;
+            height: 45px;
+        }
+    }
+
+    @media #{$small-and-down} {
+        .card {
+            @include flex(1);
+            margin: 20px;
+            min-width: 0;
+            width: auto;
+        }
+    }
+}

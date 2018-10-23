@@ -1,0 +1,13 @@
+.body-home {
+    @import 'frames/splash';
+    @import 'frames/employees';
+    @import 'frames/communities';
+    @import 'frames/customers';
+    @import 'frames/parts';
+    @import 'frames/performance';
+    @import 'frames/future';
+
+    .nav-open {
+        z-index: 25;
+    }
+}

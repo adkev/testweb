@@ -1,0 +1,25 @@
+!!!
+%html
+    %head
+        %title Adkev
+        %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }
+        %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' }
+        %meta{ name: 'description', content: 'Injection / Insert Molders Indiana' }
+        %meta{ name: 'turbolinks-cache-control', content: 'no-preview' }
+        = csrf_meta_tags
+        = favicon_link_tag 'favicon.ico'
+        = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+        = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+    %body{ class: ["body-#{controller_name}", ('body-mobile' if browser.device.mobile?)] }
+        .preloader-bg
+        = render 'shared/nav'
+
+        %main.main
+            .nav-controls
+                = render 'shared/hamburger'
+                = render 'shared/logo'
+            = yield
+
+        = content_for(:scripts) if content_for?(:scripts)
+        = render 'shared/alerts'

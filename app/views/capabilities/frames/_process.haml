@@ -1,0 +1,36 @@
+.frame.process-frame{ data: { anchor: 'process', frame: 'process' } }
+    .content
+        .fg
+            .hc.text-center
+                %h2.text-dark-blue
+                    .text-extra-bold EFFECTIVE PRODUCT DEVELOPMENT
+                    .text-semi-bold KEY TO PERFECT PARTS
+                %br
+                %br
+
+            .fr.vc
+                .fc.f1.text-dark-blue.slide-controls
+                    = link_to '', class: 'slide-control', data: { slide: 1 } do
+                        .fr.vc.step
+                            %h2.text-extra-bold 1
+                            %h3.text-bold Concept rendering<br>of a product
+                    = link_to '', class: 'slide-control', data: { slide: 2 } do
+                        .fr.vc.step
+                            %h2.text-extra-bold 2
+                            %h3.text-bold 3D CAD design
+                    = link_to '', class: 'slide-control', data: { slide: 3 } do
+                        .fr.vc.step
+                            %h2.text-extra-bold 3
+                            %h3.text-bold Tooling - Design for<br>Manufacturing
+                    = link_to '', class: 'slide-control', data: { slide: 4 } do
+                        .fr.vc.step
+                            %h2.text-extra-bold 4
+                            %h3.text-bold Simulated Prediction
+                    = link_to '', class: 'slide-control', data: { slide: 5 } do
+                        .fr.vc.step
+                            %h2.text-extra-bold 5
+                            %h3.text-bold Production Parts
+
+                .fc.hc.vc.f1.slides{ data: { speed: 0.5, duration: 3, transition: 'fade', stop_on_hover: true } }
+                    - Slide::Technique.all.each_with_index do |slide, i|
+                        .slide{ data: { slide: i + 1 }, style: ("background-image: url('#{slide.image.url(:original)}');" if slide.image.exists?) }

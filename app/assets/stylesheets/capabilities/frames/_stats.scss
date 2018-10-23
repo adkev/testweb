@@ -1,0 +1,152 @@
+.stats-frame {
+    .content {
+        padding: 50px 75px;
+    }
+
+    img {
+        margin-bottom: 30px;
+        width: 160px;
+    }
+
+    hr {
+        background-color: $theme-white;
+        margin: 5px 0;
+    }
+
+    .split {
+        height: 150px;
+        width: 1px;
+        background-color: $theme-white;
+    }
+
+    .fr {
+        margin-bottom: 30px;
+    }
+
+    .axis {
+        @include align-items(center);
+        @include display(flex);
+        @include justify-content(center);
+        width: 100%;
+        padding: 10px 0;
+
+        > label {
+            @include flex(0 0 6%);
+            text-align: center;
+        }
+
+        &.labels {
+            padding: 10px 0;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+
+        .left,
+        .right {
+            @include align-items(center);
+            @include display(flex);
+            @include flex(1);
+
+            > label {
+                @include flex(0 0 6.25%);
+            }
+        }
+
+        .left {
+            @include justify-content(flex-end);
+            text-align: left;
+        }
+
+        .right {
+            @include justify-content(flex-start);
+            text-align: right;
+        }
+
+        [data-qty] {
+            height: 10px;
+            background-color: $theme-white;
+            border-radius: 10px;
+        }
+
+        [data-qty='1'] {
+            width: 6.25%;
+        }
+
+        [data-qty='2'] {
+            width: 12.5%;
+        }
+
+        [data-qty='3'] {
+            width: 18.75%;
+        }
+
+        [data-qty='4'] {
+            width: 25%;
+        }
+
+        [data-qty='5'] {
+            width: 31.25%;
+        }
+
+        [data-qty='6'] {
+            width: 37.5%;
+        }
+
+        [data-qty='8'] {
+            width: 50%;
+        }
+
+        [data-qty='7'] {
+            width: 43.75%;
+        }
+
+        [data-qty='9'] {
+            width: 56.25%;
+        }
+
+        [data-qty='10'] {
+            width: 62.5%;
+        }
+
+        [data-qty='11'] {
+            width: 68.75%;
+        }
+
+        [data-qty='12'] {
+            width: 75%;
+        }
+
+        [data-qty='13'] {
+            width: 81.25%;
+        }
+
+        [data-qty='14'] {
+            width: 87.5%;
+        }
+
+        [data-qty='15'] {
+            width: 93.75%;
+        }
+
+        [data-qty='16'] {
+            width: 100%;
+        }
+
+    }
+
+    @media #{$small-and-down} {
+        font-size: 9px;
+
+        .axis label {
+            font-weight: 200;
+        }
+
+        .content {
+            padding: 50px 5px !important;
+        }
+    }
+
+}

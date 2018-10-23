@@ -1,0 +1,69 @@
+class Users::ConfirmationsController < Devise::ConfirmationsController
+  layout 'edge'
+
+  # PUT /resource/confirmation
+  def update
+    with_unconfirmed_confirmable do
+      if @confirmable.has_no_password?
+        @confirmable.attempt_set_password(params[:user])
+        if @confirmable.valid? and @confirmable.password_match?
+          do_confirm
+        else
+          do_show
+          @confirmable.errors.clear
+        end
+      else
+        @confirmable.errors.add(:email, :password_already_set)
+      end
+    end
+
+    if !@confirmable.errors.empty?
+      self.resource = @confirmable
+      render 'devise/confirmations/new'
+    end
+  end
+
+  # GET /resource/confirmation?confirmation_token=xxx
+  def show
+    with_unconfirmed_confirmable do
+      if @confirmable.has_no_password?
+        do_show
+      else
+        do_confirm
+      end
+    end
+    unless @confirmable.errors.empty?
+      self.resource = @confirmable
+      render 'devise/confirmations/new'
+    end
+  end
+
+protected
+
+
+  def after_resending_confirmation_instructions_path_for(resource_name)
+    is_navigational_format? ? (signed_in? && current_user.is_a?(Administrator) ? system_users_path : new_user_session_path) : root_path
+  end
+
+  def with_unconfirmed_confirmable
+    @confirmable = User.find_or_initialize_with_error_by(:confirmation_token, params[:confirmation_token])
+    if !@confirmable.new_record?
+      @confirmable.only_if_unconfirmed {yield}
+    end
+  end
+
+  def do_show
+    @confirmation_token = params[:confirmation_token]
+    @requires_password = true
+    self.resource = @confirmable
+    flash.now[:alert] = []
+    @confirmable.errors.full_messages.each{ |msg| flash.now[:alert] << msg }
+    render 'devise/confirmations/show'
+  end
+
+  def do_confirm
+    @confirmable.confirm
+    set_flash_message :notice, :confirmed
+    sign_in_and_redirect(resource_name, @confirmable)
+  end
+end

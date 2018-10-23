@@ -1,0 +1,31 @@
+!!!
+%html
+    %head
+        %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => "Content-Type" }
+        %meta{ name: 'viewport', content: 'initial-scale=1, maximum-scale=1' }
+        %title Adkev
+        = csrf_meta_tags
+        = favicon_link_tag 'favicon.ico'
+        = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+        = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+    %body{ class: ["body-edge", "body-#{controller_name}", ('body-mobile' if browser.device.mobile?)] }
+        = render 'shared/nav'
+
+        %main.main
+            = content_for?(:title) ? yield(:title) : nil
+            .fg
+                - if content_for?(:sidebar)
+                    .fr.f1
+                        .fc.f1
+                            = yield(:sidebar)
+                        .fc.f4
+                            = yield(:content)
+                - else
+                    .fr.f1
+                        = yield(:content)
+
+            = render 'shared/hamburger', color: 'white', text: ''
+
+        = content_for(:scripts) if content_for?(:scripts)
+        = render 'shared/alerts'

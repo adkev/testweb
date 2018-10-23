@@ -1,0 +1,63 @@
+- goodland = Facility.find_by_city('Goodland')
+- monticello = Facility.find_by_city('Monticello')
+
+.frame.stats-frame{ data: { anchor: 'stats', frame: 'stats', nav: { class: "white" } } }
+    .content.bg-blue-gray.text-white
+        .fg
+            .fr.vc
+                .fc.hc.f1
+                    = image_tag 'logos/goodland/white.svg'
+                    %h3.text-bold #{goodland.facility_presses.sum(:quantity)} PRESSES
+                .split
+                .fc.hc.f1
+                    = image_tag 'logos/monticello/white.svg'
+                    %h3.text-bold #{monticello.facility_presses.sum(:quantity)} PRESSES
+
+            .stat-grid
+                .axis
+                    .left
+                        %label 16
+                        %label 15
+                        %label 14
+                        %label 13
+                        %label 12
+                        %label 11
+                        %label 10
+                        %label 9
+                        %label 8
+                        %label 7
+                        %label 6
+                        %label 5
+                        %label 4
+                        %label 3
+                        %label 2
+                        %label 1
+                    %label TON
+                    .right
+                        %label 1
+                        %label 2
+                        %label 3
+                        %label 4
+                        %label 5
+                        %label 6
+                        %label 7
+                        %label 8
+                        %label 9
+                        %label 10
+                        %label 11
+                        %label 12
+                        %label 13
+                        %label 14
+                        %label 15
+                        %label 16
+
+                %hr
+                %br
+
+                - Press.all.each do |press|
+                    .axis
+                        .left
+                            %div{ data: { qty: press.facility_quantity(goodland) } }
+                        %label= press.ton
+                        .right
+                            %div{ data: { qty: press.facility_quantity(monticello) } }

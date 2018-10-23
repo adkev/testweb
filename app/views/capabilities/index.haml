@@ -1,0 +1,13 @@
+- preload_sources = [asset_path('backgrounds/capabilities.jpg'), asset_path('backgrounds/warehouse.jpg'), asset_path('elements/keurig.png')] + Slide::Technique.all.map{ |s| s.image.url(:original) if s.image.exists? }.compact
+
+#full-scroll{ data: { preload: preload_sources } }
+    = render 'capabilities/frames/splash'
+    = render 'capabilities/frames/story'
+    = render 'capabilities/frames/process'
+    = render 'capabilities/frames/tonnage'
+    = render 'capabilities/frames/value_added'
+    = render 'capabilities/frames/two_shot'
+    = render 'capabilities/frames/insert'
+    = render 'capabilities/frames/stats'
+    = render 'capabilities/frames/warehouse'
+    .frame.footer-frame.bg-blue{ data: { anchor: 'footer', frame: 'footer', nav: { class: "white" } } }= render 'shared/footer'

@@ -1,0 +1,16 @@
+.frame.two-shot-frame{ data: { anchor: 'two-shot', frame: 'two-shot' } }
+    .content
+        .fg.vc
+            .fr.vc
+                .fc.hc.f1
+                    %div
+                        %h2.text-dark-blue
+                            .text-extra-bold TWO-SHOT
+                            .text-semi-bold MOLDING
+                        %p Adkev has four 280-ton Sumitomo two-shot rotary platen presses with which we employ both rotary tool two-shot as well as part transfer over molding to accomplish multi-material part configurations.
+                .fc.hc.f1
+                    - if browser.device.mobile?
+                        = image_tag 'elements/mobile/two_shot.svg'
+                    - else
+                        = inline_svg 'elements/two_shot.svg'
+
